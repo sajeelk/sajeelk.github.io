@@ -1,0 +1,55 @@
+==================================================================
+https://keybase.io/mbopbop
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://sajeelk.github.io
+  * I am mbopbop (https://keybase.io/mbopbop) on keybase.
+  * I have a public key ASB5cEstKuGxSCOAo7tqOrESLZxNHQEcn-viE6PQvxwVWAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "012079704b2d2ae1b1482380a3bb6a3ab1122d9c4d1d011c9febe213a3d0bf1c15580a",
+      "host": "keybase.io",
+      "kid": "012079704b2d2ae1b1482380a3bb6a3ab1122d9c4d1d011c9febe213a3d0bf1c15580a",
+      "uid": "1618ce4b616d59e25389551736eefb19",
+      "username": "mbopbop"
+    },
+    "merkle_root": {
+      "ctime": 1504660237,
+      "hash": "b4f2da18dd55a6696a3fa93fa1bc682cec19cd614a8a699a4cf65531a118127b025c5aae89631e9c287965ab2811de76900b5c3ead68276f3cad06d8cd8e58fe",
+      "hash_meta": "12507980ab9649ab7144dbe5abca7c0519b3b4102813b9e74b374b1f66728a02",
+      "seqno": 1369103
+    },
+    "service": {
+      "hostname": "sajeelk.github.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "1.0.28"
+  },
+  "ctime": 1504660256,
+  "expire_in": 504576000,
+  "prev": "b469269895d980d36283f23cc1ca0c6e55f15956c50a6ed54660e98d134d6d8c",
+  "seqno": 14,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgeXBLLSrhsUgjgKO7ajqxEi2cTR0BHJ/r4hOj0L8cFVgKp3BheWxvYWTFA0l7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwNzk3MDRiMmQyYWUxYjE0ODIzODBhM2JiNmEzYWIxMTIyZDljNGQxZDAxMWM5ZmViZTIxM2EzZDBiZjFjMTU1ODBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwNzk3MDRiMmQyYWUxYjE0ODIzODBhM2JiNmEzYWIxMTIyZDljNGQxZDAxMWM5ZmViZTIxM2EzZDBiZjFjMTU1ODBhIiwidWlkIjoiMTYxOGNlNGI2MTZkNTllMjUzODk1NTE3MzZlZWZiMTkiLCJ1c2VybmFtZSI6Im1ib3Bib3AifSwibWVya2xlX3Jvb3QiOnsiY3RpbWUiOjE1MDQ2NjAyMzcsImhhc2giOiJiNGYyZGExOGRkNTVhNjY5NmEzZmE5M2ZhMWJjNjgyY2VjMTljZDYxNGE4YTY5OWE0Y2Y2NTUzMWExMTgxMjdiMDI1YzVhYWU4OTYzMWU5YzI4Nzk2NWFiMjgxMWRlNzY5MDBiNWMzZWFkNjgyNzZmM2NhZDA2ZDhjZDhlNThmZSIsImhhc2hfbWV0YSI6IjEyNTA3OTgwYWI5NjQ5YWI3MTQ0ZGJlNWFiY2E3YzA1MTliM2I0MTAyODEzYjllNzRiMzc0YjFmNjY3MjhhMDIiLCJzZXFubyI6MTM2OTEwM30sInNlcnZpY2UiOnsiaG9zdG5hbWUiOiJzYWplZWxrLmdpdGh1Yi5pbyIsInByb3RvY29sIjoiaHR0cHM6In0sInR5cGUiOiJ3ZWJfc2VydmljZV9iaW5kaW5nIiwidmVyc2lvbiI6MX0sImNsaWVudCI6eyJuYW1lIjoia2V5YmFzZS5pbyBnbyBjbGllbnQiLCJ2ZXJzaW9uIjoiMS4wLjI4In0sImN0aW1lIjoxNTA0NjYwMjU2LCJleHBpcmVfaW4iOjUwNDU3NjAwMCwicHJldiI6ImI0NjkyNjk4OTVkOTgwZDM2MjgzZjIzY2MxY2EwYzZlNTVmMTU5NTZjNTBhNmVkNTQ2NjBlOThkMTM0ZDZkOGMiLCJzZXFubyI6MTQsInRhZyI6InNpZ25hdHVyZSJ9o3NpZ8RAX0Fk2BzOanEKYMP4VpF3Js1x6n7+LDgXwAYABb+dCUOiBLSxlngZoJLe3VjIoLt8tgd0tOaPgk5scSYngFOjAKhzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIKZciue8dVsKaWFyrc2sQey6pwVd8LlDiGbD6nrQ/BlPo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/mbopbop
+
+==================================================================
