@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <title>Crear Lotería</title>
+</head>
+<body>
+  <h1>Crear Lotería</h1>
+  <label for="wordPairs">Escriba parejas de una palabra seguida con un enlace a una imagen (una pareja por línea): </label>
+  <textarea id="wordPairs" rows="5" cols="50"></textarea><br>
+  <label for="numBoards">Cuantas tablas quiere generar?</label>
+  <input type="number" id="numBoards" value="30" min="1"><br>
+  <button onclick="generateLoteria()">Crear Lotería</button>
+
+  <script>
+    window.jsPDF = window.jspdf.jsPDF;
+
+    // Global constants
+    const cardWidth = 45;
+    const cardHeight = 45;
+    const margin = 5;
+    const horizontalSpacing = 5;
+    const verticalSpacing = 22;
+
+    function generateLoteria() {
+      const wordPairsInput = document.getElementById("wordPairs").value;
+      const numBoardsInput = document.getElementById("numBoards").value;
+      
+      const lines = wordPairsInput.split("\n");
+      const wordPairs = [];
+
+      if (lines.length < 1) {
+        alert("Please enter at least one pair of word and image link.");
+        return;
+      }
+
+      // Convert lines to an array of objects {word, image}
+      for (let i = 0; i < lines.length; i++) {
+        const pair = lines[i].trim().split(",");
+        if (pair.length === 2) {
+          wordPairs.push({ word: pair[0], image: pair[1] });
+        } else {
+          alert(`Invalid format on line ${i + 1}. Please use the format: word,image`);
+          return;
+        }
+      }
+
+      const numBoards = parseInt(numBoardsInput, 10) || 1;
+
+      const doc = new jsPDF();
+
+      // Calculate number of cards per row and column
+      const cardsPerRow = Math.floor((doc.internal.pageSize.width - margin * 2) / (cardWidth + horizontalSpacing));
+      const cardsPerCol = Math.floor((doc.internal.pageSize.height - margin * 2) / (cardHeight + verticalSpacing));
+
+      // Generate Lotería cards
+      for (let i = 0; i < wordPairs.length; i++) {
+        const rowIndex = Math.floor(i / cardsPerRow) % cardsPerCol;
+        const colIndex = i % cardsPerRow;
+
+        const x = margin + colIndex * (cardWidth + horizontalSpacing);
+        const y = margin + rowIndex * (cardHeight + verticalSpacing);
+
+        doc.addImage(wordPairs[i].image, "JPEG", x, y, cardWidth, cardHeight);
+        doc.text(x + cardWidth / 2, y + cardHeight + 5, wordPairs[i].word, { align: "center" });
+
+        // If reached the end of the row, start a new row
+        if (colIndex === cardsPerRow - 1) {
+          // If reached the end of the page, start a new page
+          if (i !== 0 && rowIndex === cardsPerCol - 1) {
+            doc.addPage();
+          }
+        }
+      }
+
+      // Generate game boards
+      generateGameBoards(doc, wordPairs, numBoards);
+
+      // Save PDF
+      doc.save("loteria_cards.pdf");
+    }
+
+    function generateGameBoards(doc, wordPairs, numBoards) {
+      const boardSize = 16; // Number of cards per board
+
+      for (let boardIndex = 0; boardIndex < numBoards; boardIndex++) {
+        // Start a new page for each game board
+        doc.addPage();
+
+        // Generate random word-image pairs for the board
+        const shuffledPairs = shuffleArray(wordPairs).slice(0, boardSize);
+
+        for (let j = 0; j < shuffledPairs.length; j++) {
+          const rowIndex = Math.floor(j / 4);
+          const colIndex = j % 4;
+
+          const x = margin + colIndex * (cardWidth + horizontalSpacing);
+          const y = margin + rowIndex * (cardHeight + verticalSpacing);
+
+          doc.addImage(shuffledPairs[j].image, "JPEG", x, y, cardWidth, cardHeight);
+          doc.text(x + cardWidth / 2, y + cardHeight + 5, shuffledPairs[j].word, { align: "center" });
+        }
+      }
+    }
+
+    function shuffleArray(array) {
+      let currentIndex = array.length, randomIndex;
+      while (currentIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        [array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
+      }
+
+      return array;
+    }
+  </script>
+</body>
+</html>
+
